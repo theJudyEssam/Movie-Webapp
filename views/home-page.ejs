@@ -1,5 +1,10 @@
 <%- include('header.ejs') %>
 
+
+<form action="/search" method="get">
+    <input type="text" name="query">
+    <button type="submit">search</button>
+</form>
 <div>
     <h1>Discover Films</h1>
     <div style="display: flex;" id="popular">

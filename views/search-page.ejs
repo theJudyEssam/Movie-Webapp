@@ -1,0 +1,12 @@
+<%- include('header.ejs') %>
+
+
+<% for(let i = 0; i < result.length; i++){ %>
+
+    <a href="/<%= result[i].original_title %> %>">
+        <h3 style="font-size: 10px;"> <%= result[i].original_title%></h3>
+        <img style="width: 50%;" src= "https://image.tmdb.org/t/p/original/<%= result[i].poster_path %>">  
+    </a>
+    <% } %>
+
+<%- include('footer.ejs') %>

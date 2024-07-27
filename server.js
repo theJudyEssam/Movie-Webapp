@@ -55,6 +55,7 @@ async function search(title){
         }
 }
 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async(req, res)=>{
     try{
@@ -88,7 +89,12 @@ app.get("/:title", async (req, res)=>{
          movie_rating:result[0].vote_average})
 })
 
-
+app.get("/search", async(req, res)=>{
+    const query = req.params.query;
+    const result = await search(query);
+    console.log(query)
+    res.render("search-page.ejs", {result:result})
+})
 
 app.listen(port, ()=>{
     console.log(`Listening to port ${port}`);
