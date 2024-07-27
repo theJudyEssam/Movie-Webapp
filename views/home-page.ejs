@@ -5,7 +5,7 @@
     <div style="display: flex;" id="popular">
         <% for(let i = 0; i < discover_titles.length; i++){ %>
 
-        <a href="/<%= discover_titles[i] %>">
+        <a href="/<%= discover_titles[i].original_title %> %>">
             <h3 style="font-size: 10px;"> <%= discover_titles[i].original_title%></h3>
             <img style="width: 50%;" src= "https://image.tmdb.org/t/p/original/<%= discover_images[i].poster_path %>">  
         </a>

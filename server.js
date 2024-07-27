@@ -19,32 +19,40 @@ const options = {
   };
 
 
-  
+//API urls
 const popular_url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
 const discover_url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
 const upcoming_url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
 
 
-
+//API calls
 async function get_popular(){
     const response = await axios.get(popular_url, config);
     const result = response.data.results;
-
-       return result;
+    return result;
 }
 
 async function get_discover(){
     const response = await axios.get(discover_url, config);
     const result = response.data.results;
- 
     return result;
 }
 
 async function get_upcoming(){
     const response = await axios.get(upcoming_url, config);
     const result = response.data.results;
-   
     return result;
+}
+
+async function search(title){
+    try{
+        const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`, config)
+        const result = response.data.results;
+        return result;  
+        }
+        catch(error){
+            console.log(error.message)
+        }
 }
 
 
@@ -63,7 +71,6 @@ app.get("/", async(req, res)=>{
             discover_titles: discoverdata, 
             upcoming_titles: upcomingdata, 
             upcoming_images: upcomingdata
-        
         })
     }
     catch(error){
@@ -73,8 +80,12 @@ app.get("/", async(req, res)=>{
 })
 
 app.get("/:title", async (req, res)=>{
-    console.log(req.params.title)
-
+    const title = req.params.title
+    const result = await search(title);
+    res.render("movie-page.ejs", 
+        {movie_title:result[0].original_title, 
+         movie_overview:result[0].overview,
+         movie_rating:result[0].vote_average})
 })
 
 
