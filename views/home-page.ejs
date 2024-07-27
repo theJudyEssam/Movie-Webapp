@@ -1,0 +1,40 @@
+<%- include('header.ejs') %>
+
+<div>
+    <h1>Discover Films</h1>
+    <div style="display: flex;" id="popular">
+        <% for(let i = 0; i < discover_titles.length; i++){ %>
+
+        <a href="/<%= discover_titles[i] %>">
+            <h3 style="font-size: 10px;"> <%= discover_titles[i].original_title%></h3>
+            <img style="width: 50%;" src= "https://image.tmdb.org/t/p/original/<%= discover_images[i].poster_path %>">  
+        </a>
+        <% } %>
+    </div>
+
+    <h1>Popular Films</h1>
+    <div style="display: flex;" id="popular">
+        <% for(let i = 0; i < popular_titles.length; i++){ %>
+
+            <h3 style="font-size: 10px;"> <%= popular_titles[i].original_title%></h3>
+            <img style="width: 10%;" src= "https://image.tmdb.org/t/p/original/<%= popular_images[i].poster_path %>">
+
+        <% } %>
+    </div>
+    <h1> Upcoming</h1>
+    <div style="display: flex;" id="popular">
+        
+        <% for(let i = 0; i < upcoming_titles.length; i++){ %>
+
+            <h3 style="font-size: 10px;"> <%= upcoming_titles[i].original_title %></h3>
+            <img style="width: 10%;" src= "https://image.tmdb.org/t/p/original/<%= upcoming_images[i].poster_path %>">
+
+        <% } %>
+    </div>
+
+</div>
+
+
+
+
+<%- include('footer.ejs') %>
