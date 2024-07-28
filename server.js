@@ -1,8 +1,10 @@
+//The NPM packages
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import fetch from "node-fetch";
 
+//Global Variables
 const port = 3000;
 const app = express();
 const API_KEY = "8e16d019711cfa5e7d07bedad91f9667";
@@ -55,8 +57,11 @@ async function search(title){
         }
 }
 
+//Middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+//Routes
 app.get("/", async(req, res)=>{
     try{
         let populardata = await get_popular();
@@ -81,19 +86,27 @@ app.get("/", async(req, res)=>{
 })
 
 app.get("/:title", async (req, res)=>{
+    console.log("I am in the /:title")
     const title = req.params.title
-    const result = await search(title);
+    try{
+        const result = await search(title);
     res.render("movie-page.ejs", 
         {movie_title:result[0].original_title, 
          movie_overview:result[0].overview,
          movie_rating:result[0].vote_average})
+    }
+    catch(error){
+        console.log(error.message)
+    }
 })
 
-app.get("/search", async(req, res)=>{
-    const query = req.params.query;
+app.post("/search", async(req, res)=>{
+    console.log("I am in the /search")
+    const query = req.body["title"];
     const result = await search(query);
-    console.log(query)
-    res.render("search-page.ejs", {result:result})
+     console.log(query)
+    // console.log(result)
+     res.render("search-page.ejs", {result:result})
 })
 
 app.listen(port, ()=>{
