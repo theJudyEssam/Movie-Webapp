@@ -58,6 +58,7 @@ async function search(title){
 }
 
 //Middlewares
+app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 

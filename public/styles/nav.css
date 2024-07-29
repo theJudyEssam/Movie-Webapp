@@ -1,0 +1,35 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: black;
+}
+
+.logo{
+    font-size: 27px;
+   color: white;
+}
+
+.menu{
+    color: white;
+    display: flex;
+    align-items: center;
+ 
+}
+.menu a{
+    font-weight: 500;
+    margin-left:10px ;
+}
+.menu a:hover{
+    cursor: pointer;
+    color: limegreen;
+}
+/* 
+.nav-btn button{
+    border: none;
+    padding: 6px;
+    background-color: limegreen;
+    color: white;
+    font-weight: 700;
+    border-radius: 2px;
+} */

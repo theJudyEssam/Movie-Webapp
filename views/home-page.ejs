@@ -1,41 +1,58 @@
 <%- include('header.ejs') %>
 
+<header>
+    <img src="/displays/poster-background-hlybuowt1whxbh2z.jpg">
 
-<form action="/search" method="post">
-    <input type="text" name="title">
-    <button type="submit">search</button>
-</form>
-<div>
-    <h1>Discover Films</h1>
-    <div style="display: flex;" id="popular">
+    <div class="header-textbox">
+        <h1 class="header-title">MovieHub</h1>
+        <p class="header-para">All your movies, in one place. All the time. Anywhere.</p>
+    </div>
+    
+</header>
+
+<div class="movie-section">
+
+    <h1 class="genre-title">Discover</h1>
+    <div  class="movie-view" id="popular">
         <% for(let i = 0; i < discover_titles.length; i++){ %>
 
-        <a href="/<%= discover_titles[i].original_title %> %>">
-            <h3 style="font-size: 10px;"> <%= discover_titles[i].original_title%></h3>
-            <img style="width: 50%;" src= "https://image.tmdb.org/t/p/original/<%= discover_images[i].poster_path %>">  
+        <a class="poster" href="/<%= discover_titles[i].original_title %> %>">
+           
+                <img class="movie-poster" src= "https://image.tmdb.org/t/p/original/<%= discover_images[i].poster_path %>">  
+
+       
         </a>
         <% } %>
     </div>
 
-    <h1>Popular Films</h1>
-    <div style="display: flex;" id="popular">
+
+<div class="movie-section" >
+
+    <h1 class="genre-title">Popular Films</h1>
+    <div class="movie-view"  id="popular">
         <% for(let i = 0; i < popular_titles.length; i++){ %>
-
-            <h3 style="font-size: 10px;"> <%= popular_titles[i].original_title%></h3>
-            <img style="width: 10%;" src= "https://image.tmdb.org/t/p/original/<%= popular_images[i].poster_path %>">
-
+            <a class="poster" href="/<%= discover_titles[i].original_title %> %>">
+            <!-- <h3 style="font-size: 10px;"> <%= popular_titles[i].original_title%></h3> -->
+            <img class="movie-poster" src= "https://image.tmdb.org/t/p/original/<%= popular_images[i].poster_path %>">
+</a>
         <% } %>
     </div>
-    <h1> Upcoming</h1>
-    <div style="display: flex;" id="popular">
+
+</div>
+
+<div  class="movie-section">
+    <h1 class="genre-title"> Upcoming</h1>
+    <div class="movie-view"id="popular">
         
         <% for(let i = 0; i < upcoming_titles.length; i++){ %>
-
-            <h3 style="font-size: 10px;"> <%= upcoming_titles[i].original_title %></h3>
-            <img style="width: 10%;" src= "https://image.tmdb.org/t/p/original/<%= upcoming_images[i].poster_path %>">
-
+            <a class="poster" href="/<%= discover_titles[i].original_title %> %>">
+            <!-- <h3 style="font-size: 10px;"> <%= upcoming_titles[i].original_title %></h3> -->
+            <img class="movie-poster"  src= "https://image.tmdb.org/t/p/original/<%= upcoming_images[i].poster_path %>">
+            </a>
         <% } %>
     </div>
+</div>
+
 
 </div>
 

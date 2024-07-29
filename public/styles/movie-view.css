@@ -1,0 +1,39 @@
+.movie-view::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+
+/* Container for the movie posters */
+.movie-view {
+    display: flex;             /* Arrange items in a row */
+    overflow-x: auto;          /* Enable horizontal scrolling */
+    gap: 10px;                 /* Space between posters */
+    padding: 10px;             /* Optional: Padding around the content */
+    white-space: nowrap;       /* Prevent line breaks */
+    scroll-behavior: smooth; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  /* Smooth scrolling experience */
+}
+
+/* Individual poster links */
+.poster {
+    display: inline-block;     /* Inline-block for horizontal flow */
+    width: auto;               /* Adjust width to fit content */
+    flex-shrink: 0;            /* Prevent shrinking */
+    text-decoration: none;     /* Remove underline from links */
+}
+
+/* Images within the poster links */
+.movie-poster {
+    width: 150px;              /* Set a specific width for consistency */
+    height: auto;              /* Maintain aspect ratio */
+    display: block;            /* Ensure the image fills the poster */
+    border-radius: 5px;        /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+
+.genre-title{
+    padding: 2rem 0rem 0px 16px;
+    font-size: 25px;
+}
