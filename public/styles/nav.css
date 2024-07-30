@@ -1,13 +1,15 @@
 nav{
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.45rem;
     background-color: black;
 }
 
 .logo{
-    font-size: 27px;
-   color: white;
+    font-size: 23px;
+    color: white;
+    display: flex;
+    align-items: center
 }
 
 .menu{

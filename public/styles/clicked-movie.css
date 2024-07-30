@@ -1,0 +1,25 @@
+.m-poster{
+    width: 27%;
+    padding: 3rem;
+}
+
+.movie-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.m-description{
+    padding: 2rem;
+}
+
+.m-overview{
+    padding-top: 1rem;
+}
+
+.back-btn{
+    background-color: limegreen;
+    color: white;
+    margin: 3rem;
+}

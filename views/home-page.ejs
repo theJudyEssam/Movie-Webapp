@@ -4,8 +4,8 @@
     <img src="/displays/poster-background-hlybuowt1whxbh2z.jpg">
 
     <div class="header-textbox">
-        <h1 class="header-title">MovieHub</h1>
-        <p class="header-para">All your movies, in one place. All the time. Anywhere.</p>
+        <h1 class="header-title">Movie<span style="color: lime;">Hub</span></h1>
+        <p class="header-para">All your movies, in one place.<span style="color: lime;"> All the time. Anywhere.</span></p>
     </div>
     
 </header>
@@ -28,7 +28,7 @@
 
 <div class="movie-section" >
 
-    <h1 class="genre-title">Popular Films</h1>
+    <h1 class="genre-title">Popular</h1>
     <div class="movie-view"  id="popular">
         <% for(let i = 0; i < popular_titles.length; i++){ %>
             <a class="poster" href="/<%= discover_titles[i].original_title %> %>">
@@ -45,7 +45,7 @@
     <div class="movie-view"id="popular">
         
         <% for(let i = 0; i < upcoming_titles.length; i++){ %>
-            <a class="poster" href="/<%= discover_titles[i].original_title %> %>">
+            <a class="poster" href="/<%= upcoming_titles[i].original_title %> %>">
             <!-- <h3 style="font-size: 10px;"> <%= upcoming_titles[i].original_title %></h3> -->
             <img class="movie-poster"  src= "https://image.tmdb.org/t/p/original/<%= upcoming_images[i].poster_path %>">
             </a>

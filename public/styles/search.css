@@ -1,0 +1,23 @@
+
+.search-wrapper{
+    display: grid;
+    gap: 10px; /* Adjust the value as needed */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 3rem;
+}
+
+
+.search-header{
+    font-size: 21px;
+    padding: 1rem 3rem 0rem 3rem;
+    font-weight: 500
+}
+.search-anchor{
+    display: inline-block;    
+    width: auto;
+    
+}
+
+.search-poster{
+    width: 92%;
+}

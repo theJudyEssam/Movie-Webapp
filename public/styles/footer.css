@@ -1,0 +1,33 @@
+footer{
+    padding: 1rem 1rem 6rem 1rem;
+    
+    /* display: flex; */
+    background-color: rgb(17, 21, 17);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-logo{
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.sm-anchors{
+    padding: 1rem;
+}
+
+.sm-anchors{
+    font-size:20px;
+}
+
+.footer-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.cr{
+    font-size: 10px;
+    color: rgb(128, 131, 133);
+    text-align: center;
+}

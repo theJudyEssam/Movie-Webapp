@@ -1,13 +1,30 @@
 <%- include('header.ejs') %>
 
-<h1>
-    <%= movie_title %>
-</h1>
+<div class="movie-wrapper">
+    <img    src= "https://image.tmdb.org/t/p/original/<%= movie_poster %>" 
+    class="m-poster"> 
 
-<p>
-    <%= movie_overview %>
-</p>
+    <div class="m-description">
 
-<h2> <%= movie_rating %> </h2>
+        <h1 class="m-title"><%= movie_title %> </h1>
+        <div class="m-tags">
+            <h6>Rating: <%=movie_rating  %> </h6>
+        <h6>Language: English</h6>
+        </div>
+        
+        
+        <p class="m-overview">
+          <%= movie_overview %>
+        </p>
+    </div>
+    
+
+
+</div>
+
+
+
+
+
 
 <%- include('footer.ejs') %>

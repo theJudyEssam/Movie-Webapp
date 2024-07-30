@@ -32,8 +32,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
 }
 
+.movie-poster:hover{
+    width: 155px;
+    transition: all ease-in-out .5s;
+}
 
 .genre-title{
     padding: 2rem 0rem 0px 16px;
-    font-size: 25px;
+    font-size: 22px;
 }

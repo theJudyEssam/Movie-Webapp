@@ -4,6 +4,9 @@
 @import url("nav.css");
 @import url("header.css");
 @import url("movie-view.css");
+@import url("footer.css");
+@import url("clicked-movie.css");
+@import url("search.css");
 
 
 *{

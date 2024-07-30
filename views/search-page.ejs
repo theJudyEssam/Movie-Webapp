@@ -1,12 +1,14 @@
 <%- include('header.ejs') %>
 
 
+<h1 class="search-header">Getting results for <%= search_query %>......</h1>
+<div class="search-wrapper">
 <% for(let i = 0; i < result.length; i++){ %>
 
-    <a href="/<%= result[i].original_title %> %>">
-        <h3 style="font-size: 10px;"> <%= result[i].original_title%></h3>
-        <img style="width: 50%;" src= "https://image.tmdb.org/t/p/original/<%= result[i].poster_path %>">  
+    <a class="search-anchor" href="/<%= result[i].original_title %> %>">
+        <!-- <h3 style="font-size: 10px;"> <%= result[i].original_title%></h3> -->
+        <img class="search-poster"  src= "https://image.tmdb.org/t/p/original/<%= result[i].poster_path %>">  
     </a>
     <% } %>
-
+</div>
 <%- include('footer.ejs') %>

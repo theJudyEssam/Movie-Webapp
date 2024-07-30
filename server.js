@@ -94,7 +94,9 @@ app.get("/:title", async (req, res)=>{
     res.render("movie-page.ejs", 
         {movie_title:result[0].original_title, 
          movie_overview:result[0].overview,
-         movie_rating:result[0].vote_average})
+         movie_rating:result[0].vote_average,
+         movie_poster : result[0].poster_path
+        })
     }
     catch(error){
         console.log(error.message)
@@ -104,10 +106,10 @@ app.get("/:title", async (req, res)=>{
 app.post("/search", async(req, res)=>{
     console.log("I am in the /search")
     const query = req.body["title"];
-    const result = await search(query);
+    const resultz = await search(query);
      console.log(query)
     // console.log(result)
-     res.render("search-page.ejs", {result:result})
+     res.render("search-page.ejs", {result:resultz, search_query:query})
 })
 
 app.listen(port, ()=>{
